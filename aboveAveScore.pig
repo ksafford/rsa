@@ -5,7 +5,7 @@
  * Output is stored as id, {(id, word1) . . . (id, wordN)}
  * in /<outpath>/above_ave_score/part-r-xxxxx
  *
- * pig -p files="<files to read in>" outpath="<path to output>" aboveAveScore.pig
+ * pig -p files="<files to read in>" -p outpath="<path to output>" aboveAveScore.pig
 */
 
 A = LOAD '$files' AS (id:int, tfidf: {T: tuple(word:chararray, score:float)}); 

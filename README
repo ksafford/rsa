@@ -4,4 +4,4 @@
  in /<outpath>/above_ave_score/part-r-xxxxx
 
  To run:
- pig -p files="<files to read in>" outpath="<path to output>" aboveAveScore.pig
+ pig -p files="<files to read in>" -p outpath="<path to output>" aboveAveScore.pig
