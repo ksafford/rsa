@@ -5,7 +5,7 @@ aboveAveScore.pig:
  Output is stored as id, {(id, word1) . . . (id, wordN)}
  in /<outpath>/above_ave_score/part-r-xxxxx
 
- To run:
+ To Run:
  pig -p files="<files to read in>" -p outpath="<path to output>" aboveAveScore.pig
 
 topNwords.pig:
@@ -18,4 +18,15 @@ topNwords.pig:
  To Run:
  pig -p files="<files to read in>" -p outpath="<path to output>" -p N="<number of top words>" topNwords.pig
 
+
+sumTfidfScore.pig:
+
+ Joins a list of user id, word, and score with a shorter list of user id.
+ For the subset of users on the smaller list, calculates the
+ sum of all the scores per word. That is, if a word appears on two user
+ list with a score of 1.2 and 1.5, the output will have that word scored
+ with 2.7
+
+ To Run:
+ pig -p term=freq="<path to term freq>" -p user_id="<path to user id>" -p outpath="<outpath>" sumTfidfScore.pig
 
